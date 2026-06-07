@@ -70,9 +70,12 @@ The project uses a star-schema style structure with one main fact table and mult
 
 # Table Details
 <img src="images/Slide1.JPG" width="800">
-# Business Purpose
+## Business Purpose
+
 This table acts as the date dimension. It stores calendar-related attributes that help convert raw timestamps into business-friendly reporting fields.
-# Business Value
+
+## Business Value
+
 This table allows revenue, user activity, and funnel performance to be analyzed by day, month, quarter, and year.
 <img src="images/Slide2.JPG" width="800">
 <img src="images/Slide3.JPG" width="800">
