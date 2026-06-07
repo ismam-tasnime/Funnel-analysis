@@ -90,7 +90,7 @@ This table allows revenue, user activity, and funnel performance to be analyzed 
 ## Business Purpose
 This table defines the funnel journey.
 
-##Business Value
+## Business Value
 This table gives business meaning to the raw stage_id values in the fact table. It allows conversion and drop-off analysis across the customer journey.
 
 <img src="images/Slide4.JPG" width="800">
@@ -98,20 +98,20 @@ This table gives business meaning to the raw stage_id values in the fact table. 
 ## Business Purpose
 This table contains user-level attributes.
 
-##Business Value
+## Business Value
 This table supports segmentation analysis, allowing the business to understand which users and devices are more valuable.
 
 <img src="images/Slide5.JPG" width="800">
 
-##Business Purpose
+## Business Purpose
 This is the main fact table that stores every marketing event.
 
-##Business Value
+## Business Value
 This table is the foundation of the project. It connects users, channels, funnel stages, and revenue.
 
 <img src="images/Slide6.JPG" width="800">
 
-##Business Problem
+## Business Problem
 The business wants to identify users who interacted with the same funnel stage more than once.
 
 ## SQL Concept Used
@@ -121,10 +121,10 @@ The business wants to identify users who interacted with the same funnel stage m
 * HAVING
 * Positional grouping using GROUP BY 1,2
 
-##Business Insight
+## Business Insight
 This query finds repeat interactions. For example, some users viewed impressions multiple times or reached a stage more than once.
 
-##Business Solution
+## Business Solution
 
 *Users with repeated visits can be retargeted because they show higher intent. For example:
 * Users with repeated impressions but no visit may need better ad creatives.
@@ -133,55 +133,56 @@ This query finds repeat interactions. For example, some users viewed impressions
 
 <img src="images/Slide7.JPG" width="800">
 
-##Business Problem
+## Business Problem
 The business wants to know from which countries users are coming.
 
-##SQL Concept Used
+## SQL Concept Used
 
 * DISTINCT
 * COUNT
 * GROUP BY
 
-##Business Insight
+## Business Insight
 The dataset contains users from many countries. The screenshot notes that users came from around 80 different countries.
 
-##Business Solution
+## Business Solution
 Country-level analysis helps the marketing team decide where to localize campaigns, which regions need more budget, and where conversion potential exists.
 
 <img src="images/Slide8.JPG" width="800">
 
-##Business Problem
+## Business Problem
 The business wants to know how many unique days had marketing activity.
 
-##SQL Concept Used
+## SQL Concept Used
 * COUNT(DISTINCT)
 * Type casting timestamp to date using event_timestamp::date
 
-##Result
+## Result
 The dataset contains activity across 59 unique days.
 
-##Business Insight
+## Business Insight
 This means the funnel analysis is based on nearly two months of interaction data.
 
-##Business Solution
+## Business Solution
 The business can use this time window to monitor campaign performance, compare weekly behavior, and identify revenue trends.
 
 <img src="images/Slide9.JPG" width="800">
+<img src="images/Slide10.JPG" width="800">
 
-##Business Problem
+## Business Problem
 The business wants to know which hours and weekdays generate the most user visits.
 
-##SQL Concept Used
+## SQL Concept Used
 * CTE using WITH
 * EXTRACT(HOUR FROM timestamp)
 * TO_CHAR() for weekday extraction
 * LOWER() and TRIM() for text cleaning
 * Pivoting with SUM(CASE WHEN ...)
 
-##Business Insight
+## Business Insight
 This query creates a weekday-hour engagement matrix. It helps identify when customers are most active.
 
-##Business Solution
+## Business Solution
 Use high-engagement hours for:
 * Ad scheduling
 * Email campaign timing
@@ -189,95 +190,100 @@ Use high-engagement hours for:
 * Social media posting
 * Website promotion windows
 
-<img src="images/Slide10.JPG" width="800">
+<img src="images/Slide11.JPG" width="800">
 
-##Business Problem
+## Business Problem
 The business wants to identify which day has the highest engagement.
 
-##Business Insight
+## Business Insight
 Wednesday is the strongest engagement day, followed by Monday and Sunday. Friday has the lowest engagement.
 
-##Business Solution
+## Business Solution
 * Increase campaign activity on Wednesday.
 * Test promotional campaigns on Monday and Sunday.
 * Review why Friday engagement is weak.
 * Avoid wasting high ad spend on low-engagement days unless testing new creatives.
 
-<img src="images/Slide11.JPG" width="800">
 
-##Business Problem
+<img src="images/Slide12.JPG" width="800">
+<img src="images/Slide13.JPG" width="800">
+
+## Business Problem
 The business wants to identify which hour and weekday combination generates revenue.
 
-##SQL Concept Used
+## SQL Concept Used
 * CTE
 * Revenue aggregation
 * Timestamp extraction
 * Pivoting using CASE WHEN
 * Numeric casting using revenue::numeric
 
-##Business Insight
+## Business Insight
 Revenue is concentrated in a small number of time slots. The strongest revenue event happened on Friday at 01:00, while Wednesday also produced strong revenue around late morning and early afternoon.
 
-##Business Solution
+## Business Solution
 * Schedule revenue-focused campaigns around proven purchase windows.
 * Investigate why high engagement days do not always match high revenue days.
 * Build separate strategies for traffic generation and purchase conversion.
 
-<img src="images/Slide12.JPG" width="800">
 
- ###Revenue vs Visit Hour Comparison
+<img src="images/Slide14.JPG" width="800">
 
-##Business Problem
+ ### Revenue vs Visit Hour Comparison
+
+## Business Problem
 The business wants to compare whether high visit hours also generate high revenue.
 
-##Business Insight
+## Business Insight
 The comparison shows that high traffic does not always equal high revenue. Some hours may generate many visits but no purchase revenue, while specific hours generate revenue despite lower engagement.
 
-##Business Solution
+## Business Solution
 The business should not optimize only for traffic. It should optimize for:
 * Revenue per visit
 * Conversion rate by hour
 * Campaign timing
 * Purchase-intent behavior
 
-<img src="images/Slide13.JPG" width="800">
 
-##Business Problem
+<img src="images/Slide15.JPG" width="800">
+
+## Business Problem
 The business wants to understand how many users are retained from one funnel stage to the next.
 
-##SQL Concept Used
+## SQL Concept Used
 * COUNT(DISTINCT user_id)
 * JOIN
 * LAG() window function
 * CTE
 * Retention percentage calculation
 
-##Business Insight
+## Business Insight
 * From Impression to Website Visit, retention is 59.46%.
 * Add to Cart shows 104.55%, which means more unique users appeared in Add to Cart than Website Visit.
 * Purchase retention is only 21.74%, showing a major conversion issue at the final stage.
 
-##Important Analytical Note
+## Important Analytical Note
 The 104.55% Add to Cart retention suggests that the data is not strictly sequential. This can happen when users are counted independently at each stage rather than tracked as a true ordered funnel.
 
-##Business Solution
+## Business Solution
 * Fix or validate funnel event tracking.
 * Ensure users follow the correct event order.
 * Investigate why many add-to-cart users do not purchase.
 * Improve checkout flow, pricing, trust signals, and cart recovery campaigns.
   
-<img src="images/Slide14.JPG" width="800">
 
-##Business Problem
+<img src="images/Slide16.JPG" width="800">
+
+## Business Problem
 The business wants to identify the biggest leakage point in the funnel.
 
-##Business Insight
+## Business Insight
 The biggest drop-off is from Add to Cart to Purchase, where 78.26% of users did not complete the purchase.
 
-##Business Solution
+## Business Solution
 This is the most important business finding of the project.
 
-##Recommended actions:
+## Recommended actions:
 * Simplify checkout steps.
 * Add abandoned cart email campaigns.
 * Offer limited-time discounts.
@@ -286,113 +292,102 @@ This is the most important business finding of the project.
 * Analyze shipping cost or delivery-time friction.
 * Retarget add-to-cart users with paid ads.
 
-<img src="images/Slide15.JPG" width="800">
 
- ##Business Problem
+<img src="images/Slide17.JPG" width="800">
+
+ ## Business Problem
 The business wants to monitor monthly revenue movement.
 
-##Business Insight
+## Business Insight
 Revenue decreased from January to February and again from February to March. January was the best revenue month.
 
-##Business Solution
+## Business Solution
 * Investigate what campaigns ran in January.
 * Compare channel mix by month.
 * Review whether paid spend decreased.
 * Check if purchase drop-off increased in later months.
 * Relaunch successful January campaigns.
 
-<img src="images/Slide16.JPG" width="800">
+<img src="images/Slide18.JPG" width="800">
 
-##Business Problem
+## Business Problem
 The business wants to know which channel brings users, purchases, and revenue.
 
-##SQL Concept Used
+## SQL Concept Used
 * JOIN
 * COUNT(DISTINCT)
 * FILTER
 * Revenue aggregation
 
-##Business Insight
+## Business Insight
 * Organic Search generated the highest revenue: 391.35
 * TikTok generated 210.07 revenue
 * Email generated 235.39 revenue
 * Google Ads brought 12 customers but generated 0 purchases and 0 revenue
 
-##Business Solution
+## Business Solution
 * Increase investment in Organic Search because it has strong revenue and purchase performance.
 * Review Google Ads targeting, landing page, and campaign quality.
 * Continue testing TikTok because it generated revenue.
 * Use Email for nurturing because it produced strong revenue with fewer purchase customers.
 
-<img src="images/Slide17.JPG" width="800">
+<img src="images/Slide19.JPG" width="800">
 
-##Business Problem
+## Business Problem
 The business wants to know which paid channel gives the best return on marketing investment.
 
-##SQL Concept Used
+## SQL Concept Used
 * Multiple CTEs
 * Paid channel filtering
 * Simulated ad cost by funnel stage
 * Revenue-to-investment calculation
 * ROI calculation
 
-##Business Insight
+## Business Insight
 TikTok is the best paid channel, with ROI of 101.00%. Google Ads generated zero revenue despite investment.
 
-##Business Solution
+##  Business Solution
 * Scale TikTok budget carefully.
 * Pause or optimize Google Ads before increasing spend.
 * Improve Facebook creative and targeting.
 * Compare ROI with conversion rate before final budget decisions.
 
-##Why This Query Is Important
+## Why This Query Is Important
 This is one of the strongest business queries in the project because it connects marketing cost, revenue, and profitability. ROI is a core business metric used to compare return against investment cost.
 
-<img src="images/Slide18.JPG" width="800">
+<img src="images/Slide20.JPG" width="800">
 
-##Business Problem
+##  Business Problem
 The business wants to understand the user base composition.
 
-##Business Insight
+## Business Insight
 The audience is balanced across New, Returning, and VIP users.
 
-##Business Solution
+## Business Solution
 * New users need onboarding and trust-building.
 * Returning users need remarketing and product recommendations.
 * VIP users need loyalty rewards and premium offers.
 
-<img src="images/Slide19.JPG" width="800">
+<img src="images/Slide21.JPG" width="800">
+<img src="images/Slide22.JPG" width="800">
 
-##Business Problem
+## Business Problem
 The business wants to understand how paid marketing performs across user segment and device type.
 
-##Business Insight
+## Business Insight
 The strongest paid revenue came from Returning users on Mobile, generating 210.07 revenue. New users on Tablet generated 20.95 revenue. Other combinations had investment but no revenue.
 
-##Business Solution
+## Business Solution
 * Focus paid remarketing on Returning Mobile users.
 * Investigate why VIP users did not generate paid revenue.
 * Review paid campaigns on Desktop and Tablet because most combinations had spend but no revenue.
 * Improve mobile landing pages because mobile returning users converted best.
 
-<img src="images/Slide20.JPG" width="800">
 
-##Business Problem
-The business needs a clear reporting view showing revenue and user count by segment and device.Business Insight
-The pivot view makes it easy to see which segment-device combinations are valuable.
 
-##Business Solution
-The business should prioritize:
-1. Returning users on Mobile
-2. New users on Tablet
-3. Optimization of VIP paid journeys
+#### Final Business Findings
 
-<img src="images/Slide21.JPG" width="800">
-<img src="images/Slide22.JPG" width="800">
-
-####Final Business Findings
-
-##Key Insights
+## Key Insights
 
 1. Wednesday has the highest engagement
     * Wednesday generated 21 interactions.
@@ -448,7 +443,7 @@ Returning Mobile users produced the strongest paid revenue. Retargeting and mobi
 
 The business should not only track visits. It should track revenue per visit, conversion rate, and cost per purchase.
 
-##Project Conclusion
+## Project Conclusion
 
 This funnel analysis project shows how PostgreSQL can be used to convert raw marketing event data into business insights.
 The most important finding is that the business has a serious drop-off between Add to Cart and Purchase, where 78.26% of users are lost. This means the biggest opportunity is not only bringing more traffic, but improving the final conversion step.
