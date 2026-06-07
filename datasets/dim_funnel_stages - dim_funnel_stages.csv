@@ -1,0 +1,5 @@
+stage_id,stage_name,stage_order
+1,Impression,1
+2,Website Visit,2
+3,Add to Cart,3
+4,Purchase,4

@@ -1,0 +1,101 @@
+user_id,country,user_segment,device_type
+1,Bermuda,New,Desktop
+2,French Southern Territories,New,Tablet
+3,Czech Republic,New,Desktop
+4,Croatia,VIP,Mobile
+5,Sri Lanka,VIP,Mobile
+6,Armenia,Returning,Desktop
+7,Kuwait,Returning,Tablet
+8,Estonia,New,Desktop
+9,Christmas Island,Returning,Desktop
+10,Tanzania,VIP,Desktop
+11,Sudan,VIP,Mobile
+12,Mauritania,VIP,Mobile
+13,Senegal,VIP,Tablet
+14,Holy See (Vatican City State),New,Mobile
+15,Kyrgyz Republic,VIP,Desktop
+16,Guinea,New,Mobile
+17,Solomon Islands,New,Tablet
+18,British Indian Ocean Territory (Chagos Archipelago,Returning,Mobile
+19,France,Returning,Desktop
+20,Antarctica (the territory South of 60 deg S),Returning,Tablet
+21,Turks and Caicos Islands,VIP,Tablet
+22,Bosnia and Herzegovina,Returning,Tablet
+23,Madagascar,Returning,Mobile
+24,Kazakhstan,VIP,Mobile
+25,Singapore,Returning,Tablet
+26,Kiribati,VIP,Tablet
+27,Germany,Returning,Desktop
+28,Mayotte,VIP,Tablet
+29,Germany,Returning,Mobile
+30,Ethiopia,New,Mobile
+31,Slovenia,Returning,Mobile
+32,Korea,Returning,Tablet
+33,Australia,Returning,Desktop
+34,Gambia,Returning,Mobile
+35,New Zealand,New,Desktop
+36,Iceland,Returning,Mobile
+37,Mayotte,New,Mobile
+38,Nauru,Returning,Tablet
+39,Rwanda,VIP,Mobile
+40,United States of America,New,Mobile
+41,Sudan,New,Mobile
+42,Guinea-Bissau,New,Tablet
+43,Portugal,New,Tablet
+44,Bermuda,VIP,Mobile
+45,Rwanda,Returning,Desktop
+46,Taiwan,New,Tablet
+47,Sweden,VIP,Mobile
+48,Falkland Islands (Malvinas),VIP,Desktop
+49,Saint Pierre and Miquelon,Returning,Mobile
+50,Turks and Caicos Islands,Returning,Tablet
+51,Solomon Islands,VIP,Tablet
+52,Mongolia,Returning,Desktop
+53,Nicaragua,New,Tablet
+54,Oman,VIP,Mobile
+55,Colombia,VIP,Desktop
+56,Pakistan,VIP,Desktop
+57,Isle of Man,Returning,Tablet
+58,Guatemala,New,Desktop
+59,Kenya,New,Mobile
+60,Suriname,VIP,Tablet
+61,Kiribati,New,Mobile
+62,Comoros,Returning,Tablet
+63,Luxembourg,VIP,Desktop
+64,Algeria,New,Tablet
+65,Spain,New,Mobile
+66,Andorra,Returning,Tablet
+67,Costa Rica,Returning,Mobile
+68,Slovakia (Slovak Republic),New,Tablet
+69,Bahamas,VIP,Desktop
+70,Guam,New,Mobile
+71,Yemen,VIP,Mobile
+72,Iraq,VIP,Mobile
+73,Palau,Returning,Mobile
+74,Swaziland,VIP,Desktop
+75,Afghanistan,New,Desktop
+76,Korea,New,Tablet
+77,Svalbard & Jan Mayen Islands,New,Mobile
+78,Mali,Returning,Tablet
+79,Somalia,Returning,Mobile
+80,Kenya,New,Tablet
+81,Yemen,New,Tablet
+82,New Zealand,VIP,Desktop
+83,Vanuatu,Returning,Desktop
+84,Cambodia,VIP,Tablet
+85,Yemen,Returning,Tablet
+86,Isle of Man,VIP,Mobile
+87,Monaco,New,Mobile
+88,Lebanon,Returning,Tablet
+89,Malaysia,VIP,Tablet
+90,Slovenia,Returning,Tablet
+91,Egypt,Returning,Tablet
+92,Bosnia and Herzegovina,Returning,Mobile
+93,Bahrain,New,Desktop
+94,Costa Rica,VIP,Desktop
+95,Swaziland,Returning,Tablet
+96,Ecuador,New,Tablet
+97,Palau,New,Tablet
+98,Palestinian Territory,New,Tablet
+99,United Arab Emirates,New,Desktop
+100,Yemen,VIP,Tablet
